@@ -1,4 +1,9 @@
-export type ProductCategory = "Switches" | "Routers" | "Firewalls" | "SFPs" | "Access Points";
+export type ProductCategory =
+  | "Switches"
+  | "Routers"
+  | "Firewalls"
+  | "SFPs"
+  | "Access Points";
 
 export interface Product {
   id: number;
@@ -18,9 +23,16 @@ export interface Product {
   description: string;
 }
 
-const SWITCH_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633773983/5zcBxqSSzJnS84BVKAe4dU/cisco-switch-LojUAo4MRF7J7yFr4vFjsC.webp";
-const ROUTER_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633773983/5zcBxqSSzJnS84BVKAe4dU/cisco-router-2fUbVzw8Ttja7kvh4LZBGu.webp";
-const FIREWALL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633773983/5zcBxqSSzJnS84BVKAe4dU/firewall-device-ghxLcNqjzYCY7H7b4oKwcp.webp";
+const SWITCH_IMG =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663633773983/5zcBxqSSzJnS84BVKAe4dU/cisco-switch-LojUAo4MRF7J7yFr4vFjsC.webp";
+const ROUTER_IMG =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663633773983/5zcBxqSSzJnS84BVKAe4dU/cisco-router-2fUbVzw8Ttja7kvh4LZBGu.webp";
+const FIREWALL_IMG =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663633773983/5zcBxqSSzJnS84BVKAe4dU/firewall-device-ghxLcNqjzYCY7H7b4oKwcp.webp";
+const SPF_IMG =
+  "https://http2.mlstatic.com/D_NQ_NP_2X_750856-MLA110049339216_042026-F.webp";
+const AP_IMG =
+  "https://webobjects2.cdw.com/is/image/CDW/6418290?$product-main$";
 
 export const products: Product[] = [
   {
@@ -34,7 +46,8 @@ export const products: Product[] = [
     stock: "En stock",
     image: SWITCH_IMG,
     badge: "Más vendido",
-    description: "Switch empresarial de capa 3 con PoE+ en todos los puertos, ideal para entornos de campus y data center edge.",
+    description:
+      "Switch empresarial de capa 3 con PoE+ en todos los puertos, ideal para entornos de campus y data center edge.",
     specs: [
       { label: "Puertos", value: "48x GbE PoE+" },
       { label: "Uplinks", value: "4x 10G SFP+" },
@@ -54,7 +67,8 @@ export const products: Product[] = [
     currency: "USD",
     stock: "En stock",
     image: SWITCH_IMG,
-    description: "Switch de acceso de capa 3 compacto para medianas empresas con soporte Cisco DNA.",
+    description:
+      "Switch de acceso de capa 3 compacto para medianas empresas con soporte Cisco DNA.",
     specs: [
       { label: "Puertos", value: "24x GbE" },
       { label: "Uplinks", value: "4x 1G SFP" },
@@ -75,7 +89,8 @@ export const products: Product[] = [
     stock: "Bajo stock",
     image: SWITCH_IMG,
     badge: "Cloud Managed",
-    description: "Switch cloud-managed de capa 3 con PoE full budget, gestionado desde el dashboard Meraki.",
+    description:
+      "Switch cloud-managed de capa 3 con PoE full budget, gestionado desde el dashboard Meraki.",
     specs: [
       { label: "Puertos", value: "48x GbE PoE+" },
       { label: "Uplinks", value: "4x SFP+" },
@@ -96,7 +111,8 @@ export const products: Product[] = [
     stock: "En stock",
     image: ROUTER_IMG,
     badge: "Enterprise",
-    description: "Router ISR de alta performance para WAN empresarial con soporte SD-WAN, VPN y servicios de seguridad integrados.",
+    description:
+      "Router ISR de alta performance para WAN empresarial con soporte SD-WAN, VPN y servicios de seguridad integrados.",
     specs: [
       { label: "Throughput", value: "2 Gbps" },
       { label: "Interfaces WAN", value: "4x GbE" },
@@ -116,7 +132,8 @@ export const products: Product[] = [
     currency: "USD",
     stock: "En stock",
     image: ROUTER_IMG,
-    description: "Router/Firewall SD-WAN cloud-managed para sucursales medianas con visibilidad de aplicaciones.",
+    description:
+      "Router/Firewall SD-WAN cloud-managed para sucursales medianas con visibilidad de aplicaciones.",
     specs: [
       { label: "Throughput", value: "1 Gbps" },
       { label: "VPN Peers", value: "250" },
@@ -137,7 +154,8 @@ export const products: Product[] = [
     stock: "En stock",
     image: FIREWALL_IMG,
     badge: "Recomendado",
-    description: "NGFW de próxima generación con inspección SSL, IPS, antivirus y control de aplicaciones para medianas empresas.",
+    description:
+      "NGFW de próxima generación con inspección SSL, IPS, antivirus y control de aplicaciones para medianas empresas.",
     specs: [
       { label: "Firewall", value: "20 Gbps" },
       { label: "IPS", value: "3 Gbps" },
@@ -157,7 +175,8 @@ export const products: Product[] = [
     currency: "USD",
     stock: "Bajo stock",
     image: FIREWALL_IMG,
-    description: "Firewall ASA con FirePOWER Services para protección avanzada contra amenazas en entornos corporativos.",
+    description:
+      "Firewall ASA con FirePOWER Services para protección avanzada contra amenazas en entornos corporativos.",
     specs: [
       { label: "Throughput", value: "1.8 Gbps" },
       { label: "Interfaces", value: "8x GbE" },
@@ -176,8 +195,9 @@ export const products: Product[] = [
     price: 180,
     currency: "USD",
     stock: "En stock",
-    image: SWITCH_IMG,
-    description: "Transceptor SFP+ 10G de corto alcance para fibra óptica multimodo, compatible con equipos Cisco.",
+    image: SPF_IMG,
+    description:
+      "Transceptor SFP+ 10G de corto alcance para fibra óptica multimodo, compatible con equipos Cisco.",
     specs: [
       { label: "Velocidad", value: "10 Gbps" },
       { label: "Alcance", value: "300m (OM3)" },
@@ -196,8 +216,9 @@ export const products: Product[] = [
     price: 95,
     currency: "USD",
     stock: "En stock",
-    image: SWITCH_IMG,
-    description: "Transceptor SFP 1G para fibra monomodo de largo alcance, ideal para enlaces entre edificios.",
+    image: SPF_IMG,
+    description:
+      "Transceptor SFP 1G para fibra monomodo de largo alcance, ideal para enlaces entre edificios.",
     specs: [
       { label: "Velocidad", value: "1 Gbps" },
       { label: "Alcance", value: "10km" },
@@ -216,9 +237,10 @@ export const products: Product[] = [
     price: 1200,
     currency: "USD",
     stock: "En stock",
-    image: SWITCH_IMG,
+    image: AP_IMG,
     badge: "Wi-Fi 6",
-    description: "Access Point Wi-Fi 6 cloud-managed de alto rendimiento para entornos de alta densidad de usuarios.",
+    description:
+      "Access Point Wi-Fi 6 cloud-managed de alto rendimiento para entornos de alta densidad de usuarios.",
     specs: [
       { label: "Estándar", value: "802.11ax (Wi-Fi 6)" },
       { label: "Velocidad", value: "5.9 Gbps" },
@@ -237,8 +259,9 @@ export const products: Product[] = [
     price: 680,
     currency: "USD",
     stock: "En stock",
-    image: SWITCH_IMG,
-    description: "Access Point Aironet 2800 con Wave 2 para entornos corporativos con controladora WLC.",
+    image: AP_IMG,
+    description:
+      "Access Point Aironet 2800 con Wave 2 para entornos corporativos con controladora WLC.",
     specs: [
       { label: "Estándar", value: "802.11ac Wave 2" },
       { label: "Velocidad", value: "2.6 Gbps" },
@@ -257,8 +280,9 @@ export const products: Product[] = [
     price: 180,
     currency: "USD",
     stock: "En stock",
-    image: SWITCH_IMG,
-    description: "Access Point UniFi AC Pro dual-band para oficinas y negocios con gestión centralizada UniFi.",
+    image: AP_IMG,
+    description:
+      "Access Point UniFi AC Pro dual-band para oficinas y negocios con gestión centralizada UniFi.",
     specs: [
       { label: "Estándar", value: "802.11ac" },
       { label: "Velocidad", value: "1.75 Gbps" },
