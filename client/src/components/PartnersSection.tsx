@@ -44,10 +44,13 @@ export default function PartnersSection() {
                 transition={{ duration: 0.3, delay: i * 0.05 }}
                 className="flex items-center gap-2 text-slate-300 hover:text-slate-500 transition-colors group"
               >
-                <Icon size={20} className="group-hover:text-blue-500 transition-colors" />
+                <Icon
+                  size={20}
+                  className="group-hover:text-blue-500 transition-colors"
+                />
                 <span
                   className="text-base font-extrabold"
-                  style={{ fontFamily: "Syne, sans-serif" }}
+                  style={{ fontFamily: "Inter, sans-serif" }}
                 >
                   {partner.name}
                 </span>

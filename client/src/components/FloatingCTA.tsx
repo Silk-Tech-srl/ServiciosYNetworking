@@ -4,7 +4,11 @@
  */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { IconBrandWhatsapp, IconX, IconMessageCircle } from "@tabler/icons-react";
+import {
+  IconBrandWhatsapp,
+  IconX,
+  IconMessageCircle,
+} from "@tabler/icons-react";
 
 export default function FloatingCTA() {
   const [visible, setVisible] = useState(false);
@@ -37,7 +41,7 @@ export default function FloatingCTA() {
               >
                 <p
                   className="font-bold text-slate-800 text-sm mb-1"
-                  style={{ fontFamily: "Syne, sans-serif" }}
+                  style={{ fontFamily: "Inter, sans-serif" }}
                 >
                   ¿Necesitás una cotización?
                 </p>

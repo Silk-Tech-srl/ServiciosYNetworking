@@ -1,16 +1,11 @@
 /**
  * Navbar — Tech Precision design
  * Fondo: blanco hueso con blur, logo con degradado azul-celeste
- * Fuente: Syne para logo, DM Sans para links
+ * Fuente: Inter para logo, DM Sans para links
  */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  IconNetwork,
-  IconMenu2,
-  IconX,
-  IconPhone,
-} from "@tabler/icons-react";
+import { IconNetwork, IconMenu2, IconX, IconPhone } from "@tabler/icons-react";
 
 const navLinks = [
   { label: "Servicios", href: "#servicios" },
@@ -58,7 +53,7 @@ export default function Navbar() {
             </div>
             <span
               className="font-display font-700 text-lg tracking-tight"
-              style={{ fontFamily: "Syne, sans-serif", fontWeight: 700 }}
+              style={{ fontFamily: "Inter, sans-serif", fontWeight: 700 }}
             >
               <span className="gradient-brand-text">Servicios</span>
               <span className="text-slate-800"> & Networking</span>
@@ -67,7 +62,7 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
@@ -119,7 +114,7 @@ export default function Navbar() {
             className="md:hidden bg-white border-t border-slate-100 shadow-lg"
           >
             <div className="container py-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
+              {navLinks.map(link => (
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link.href)}

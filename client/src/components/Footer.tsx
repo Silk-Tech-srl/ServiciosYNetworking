@@ -52,7 +52,8 @@ export default function Footer() {
       id="contacto"
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #0a1628 0%, #1E3A5F 50%, #0d2044 100%)",
+        background:
+          "linear-gradient(135deg, #0a1628 0%, #1E3A5F 50%, #0d2044 100%)",
       }}
     >
       {/* Grid overlay */}
@@ -75,7 +76,7 @@ export default function Footer() {
               </div>
               <span
                 className="font-extrabold text-lg text-white"
-                style={{ fontFamily: "Syne, sans-serif" }}
+                style={{ fontFamily: "Inter, sans-serif" }}
               >
                 Servicios & Networking
               </span>
@@ -92,12 +93,17 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               {[
                 { icon: IconPhone, text: "+54 11 0000-0000" },
-                { icon: IconMail, text: "info@serviciosynetworking.com" },
+                { icon: IconMail, text: "info@servicioIntertworking.com" },
                 { icon: IconMapPin, text: "Buenos Aires, Argentina" },
               ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2.5 text-sm text-blue-200/70">
+                <div
+                  key={text}
+                  className="flex items-center gap-2.5 text-sm text-blue-200/70"
+                >
                   <Icon size={15} className="text-cyan-400 shrink-0" />
-                  <span style={{ fontFamily: "DM Sans, sans-serif" }}>{text}</span>
+                  <span style={{ fontFamily: "DM Sans, sans-serif" }}>
+                    {text}
+                  </span>
                 </div>
               ))}
             </div>
@@ -125,12 +131,12 @@ export default function Footer() {
             <div key={category} className="lg:col-span-2">
               <h4
                 className="text-white font-bold text-sm uppercase tracking-wider mb-5"
-                style={{ fontFamily: "Syne, sans-serif" }}
+                style={{ fontFamily: "Inter, sans-serif" }}
               >
                 {category}
               </h4>
               <ul className="flex flex-col gap-2.5">
-                {links.map((link) => (
+                {links.map(link => (
                   <li key={link}>
                     <button
                       className="text-sm text-blue-200/60 hover:text-cyan-300 transition-colors text-left"
@@ -148,7 +154,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h4
               className="text-white font-bold text-sm uppercase tracking-wider mb-5"
-              style={{ fontFamily: "Syne, sans-serif" }}
+              style={{ fontFamily: "Inter, sans-serif" }}
             >
               Solicitar Presupuesto
             </h4>
@@ -159,10 +165,13 @@ export default function Footer() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-6 text-center"
               >
-                <IconCircleCheck size={40} className="text-emerald-400 mx-auto mb-3" />
+                <IconCircleCheck
+                  size={40}
+                  className="text-emerald-400 mx-auto mb-3"
+                />
                 <p
                   className="text-emerald-300 font-semibold"
-                  style={{ fontFamily: "Syne, sans-serif" }}
+                  style={{ fontFamily: "Inter, sans-serif" }}
                 >
                   ¡Mensaje enviado!
                 </p>
@@ -179,7 +188,7 @@ export default function Footer() {
                   type="text"
                   placeholder="Tu nombre"
                   value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  onChange={e => setForm({ ...form, name: e.target.value })}
                   required
                   className="w-full px-4 py-2.5 text-sm bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200/40 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 focus:border-cyan-400/50 transition-all"
                   style={{ fontFamily: "DM Sans, sans-serif" }}
@@ -188,7 +197,7 @@ export default function Footer() {
                   type="email"
                   placeholder="Email corporativo"
                   value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  onChange={e => setForm({ ...form, email: e.target.value })}
                   required
                   className="w-full px-4 py-2.5 text-sm bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200/40 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 focus:border-cyan-400/50 transition-all"
                   style={{ fontFamily: "DM Sans, sans-serif" }}
@@ -197,14 +206,14 @@ export default function Footer() {
                   type="text"
                   placeholder="Empresa"
                   value={form.company}
-                  onChange={(e) => setForm({ ...form, company: e.target.value })}
+                  onChange={e => setForm({ ...form, company: e.target.value })}
                   className="w-full px-4 py-2.5 text-sm bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200/40 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 focus:border-cyan-400/50 transition-all"
                   style={{ fontFamily: "DM Sans, sans-serif" }}
                 />
                 <textarea
                   placeholder="Describe tu proyecto o necesidad..."
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  onChange={e => setForm({ ...form, message: e.target.value })}
                   rows={3}
                   required
                   className="w-full px-4 py-2.5 text-sm bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200/40 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 focus:border-cyan-400/50 transition-all resize-none"
@@ -234,10 +243,11 @@ export default function Footer() {
             className="text-blue-200/40 text-xs"
             style={{ fontFamily: "DM Sans, sans-serif" }}
           >
-            © {new Date().getFullYear()} Servicios y Networking. Todos los derechos reservados.
+            © {new Date().getFullYear()} Servicios y Networking. Todos los
+            derechos reservados.
           </p>
           <div className="flex gap-6">
-            {["Política de Privacidad", "Términos de Uso"].map((item) => (
+            {["Política de Privacidad", "Términos de Uso"].map(item => (
               <button
                 key={item}
                 className="text-blue-200/40 text-xs hover:text-blue-200/70 transition-colors"

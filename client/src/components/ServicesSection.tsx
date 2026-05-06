@@ -70,7 +70,13 @@ const services = [
   },
 ];
 
-function TiltCard({ service, index }: { service: (typeof services)[0]; index: number }) {
+function TiltCard({
+  service,
+  index,
+}: {
+  service: (typeof services)[0];
+  index: number;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
@@ -120,7 +126,7 @@ function TiltCard({ service, index }: { service: (typeof services)[0]; index: nu
             </div>
             <span
               className="text-5xl font-extrabold text-slate-100 select-none"
-              style={{ fontFamily: "Syne, sans-serif" }}
+              style={{ fontFamily: "Inter, sans-serif" }}
             >
               {service.number}
             </span>
@@ -129,7 +135,7 @@ function TiltCard({ service, index }: { service: (typeof services)[0]; index: nu
           {/* Title */}
           <h3
             className="text-lg font-bold text-slate-800 mb-3 leading-snug"
-            style={{ fontFamily: "Syne, sans-serif" }}
+            style={{ fontFamily: "Inter, sans-serif" }}
           >
             {service.title}
           </h3>
@@ -144,7 +150,7 @@ function TiltCard({ service, index }: { service: (typeof services)[0]; index: nu
 
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5 mb-5">
-            {service.tags.map((tag) => (
+            {service.tags.map(tag => (
               <span
                 key={tag}
                 className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200"
@@ -223,7 +229,7 @@ export default function ServicesSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4"
-            style={{ fontFamily: "Syne, sans-serif" }}
+            style={{ fontFamily: "Inter, sans-serif" }}
           >
             Soluciones completas{" "}
             <span className="gradient-brand-text">de red</span>

@@ -16,15 +16,35 @@ import {
 import { products, type Product, type ProductCategory } from "../data/products";
 import ProductModal from "./ProductModal";
 
-const CATEGORIES: ProductCategory[] = ["Switches", "Routers", "Firewalls", "SFPs", "Access Points"];
+const CATEGORIES: ProductCategory[] = [
+  "Switches",
+  "Routers",
+  "Firewalls",
+  "SFPs",
+  "Access Points",
+];
 
 const stockConfig = {
-  "En stock": { icon: IconCircleCheck, color: "text-emerald-600", dot: "bg-emerald-500" },
-  "Bajo stock": { icon: IconAlertTriangle, color: "text-amber-600", dot: "bg-amber-500" },
+  "En stock": {
+    icon: IconCircleCheck,
+    color: "text-emerald-600",
+    dot: "bg-emerald-500",
+  },
+  "Bajo stock": {
+    icon: IconAlertTriangle,
+    color: "text-amber-600",
+    dot: "bg-amber-500",
+  },
   "Sin stock": { icon: IconCircleX, color: "text-red-500", dot: "bg-red-400" },
 };
 
-function ProductCard({ product, onClick }: { product: Product; onClick: () => void }) {
+function ProductCard({
+  product,
+  onClick,
+}: {
+  product: Product;
+  onClick: () => void;
+}) {
   const stock = stockConfig[product.stock];
 
   return (
@@ -64,7 +84,9 @@ function ProductCard({ product, onClick }: { product: Product; onClick: () => vo
           <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">
             {product.brand}
           </span>
-          <div className={`flex items-center gap-1 text-xs font-medium ${stock.color}`}>
+          <div
+            className={`flex items-center gap-1 text-xs font-medium ${stock.color}`}
+          >
             <span className={`w-1.5 h-1.5 rounded-full ${stock.dot}`} />
             {product.stock}
           </div>
@@ -73,7 +95,7 @@ function ProductCard({ product, onClick }: { product: Product; onClick: () => vo
         {/* Name */}
         <h3
           className="font-bold text-slate-800 text-sm leading-snug mb-1 line-clamp-2"
-          style={{ fontFamily: "Syne, sans-serif" }}
+          style={{ fontFamily: "Inter, sans-serif" }}
         >
           {product.name}
         </h3>
@@ -84,14 +106,17 @@ function ProductCard({ product, onClick }: { product: Product; onClick: () => vo
           <div>
             <span
               className="text-lg font-extrabold gradient-brand-text"
-              style={{ fontFamily: "Syne, sans-serif" }}
+              style={{ fontFamily: "Inter, sans-serif" }}
             >
               {product.currency} {product.price.toLocaleString("es-AR")}
             </span>
             <span className="text-xs text-slate-400 ml-1">+ IVA</span>
           </div>
           <button
-            onClick={(e) => { e.stopPropagation(); onClick(); }}
+            onClick={e => {
+              e.stopPropagation();
+              onClick();
+            }}
             className="p-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 transition-colors"
           >
             <IconShoppingCart size={16} />
@@ -104,14 +129,16 @@ function ProductCard({ product, onClick }: { product: Product; onClick: () => vo
 
 export default function StoreSection() {
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState<ProductCategory | "Todos">("Todos");
+  const [activeCategory, setActiveCategory] = useState<
+    ProductCategory | "Todos"
+  >("Todos");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [consultProduct, setConsultProduct] = useState<Product | null>(null);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const filtered = useMemo(() => {
-    return products.filter((p) => {
+    return products.filter(p => {
       const matchSearch =
         search === "" ||
         p.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -154,7 +181,7 @@ export default function StoreSection() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight"
-                style={{ fontFamily: "Syne, sans-serif" }}
+                style={{ fontFamily: "Inter, sans-serif" }}
               >
                 Equipamiento{" "}
                 <span className="gradient-brand-text">certificado</span>
@@ -185,7 +212,7 @@ export default function StoreSection() {
                 type="text"
                 placeholder="Buscar por nombre, marca o modelo..."
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={e => setSearch(e.target.value)}
                 className="w-full pl-10 pr-4 py-2.5 text-sm border border-slate-200 rounded-xl bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-all"
                 style={{ fontFamily: "DM Sans, sans-serif" }}
               />
@@ -204,7 +231,7 @@ export default function StoreSection() {
             <IconFilter size={13} />
             <span style={{ fontFamily: "DM Sans, sans-serif" }}>Filtrar:</span>
           </div>
-          {(["Todos", ...CATEGORIES] as const).map((cat) => (
+          {(["Todos", ...CATEGORIES] as const).map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat as typeof activeCategory)}
@@ -223,7 +250,7 @@ export default function StoreSection() {
         {/* Products grid */}
         {filtered.length > 0 ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {filtered.map((product) => (
+            {filtered.map(product => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -245,7 +272,10 @@ export default function StoreSection() {
               No se encontraron productos para "{search}"
             </p>
             <button
-              onClick={() => { setSearch(""); setActiveCategory("Todos"); }}
+              onClick={() => {
+                setSearch("");
+                setActiveCategory("Todos");
+              }}
               className="mt-4 text-blue-600 text-sm font-medium hover:underline"
             >
               Limpiar filtros
@@ -268,17 +298,23 @@ export default function StoreSection() {
             Marcas con las que trabajamos
           </p>
           <div className="flex flex-wrap justify-center gap-8 items-center">
-            {["Cisco", "Meraki", "Fortinet", "Aruba", "Ubiquiti", "Juniper", "Palo Alto"].map(
-              (brand) => (
-                <span
-                  key={brand}
-                  className="text-lg font-extrabold text-slate-200 hover:text-slate-400 transition-colors"
-                  style={{ fontFamily: "Syne, sans-serif" }}
-                >
-                  {brand}
-                </span>
-              )
-            )}
+            {[
+              "Cisco",
+              "Meraki",
+              "Fortinet",
+              "Aruba",
+              "Ubiquiti",
+              "Juniper",
+              "Palo Alto",
+            ].map(brand => (
+              <span
+                key={brand}
+                className="text-lg font-extrabold text-slate-200 hover:text-slate-400 transition-colors"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                {brand}
+              </span>
+            ))}
           </div>
         </motion.div>
       </div>

@@ -35,7 +35,7 @@ export default function CTABanner() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="text-3xl md:text-4xl font-extrabold text-white mb-3"
-              style={{ fontFamily: "Syne, sans-serif" }}
+              style={{ fontFamily: "Inter, sans-serif" }}
             >
               ¿Listo para modernizar tu red?
             </motion.h2>

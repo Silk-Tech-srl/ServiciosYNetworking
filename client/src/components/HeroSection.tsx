@@ -115,7 +115,7 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-6"
-            style={{ fontFamily: "Syne, sans-serif", perspective: "600px" }}
+            style={{ fontFamily: "Inter, sans-serif", perspective: "600px" }}
           >
             {titleWords.map((word, i) => (
               <motion.span
@@ -201,7 +201,7 @@ export default function HeroSection() {
                 <div>
                   <div
                     className="text-2xl font-bold text-white"
-                    style={{ fontFamily: "Syne, sans-serif" }}
+                    style={{ fontFamily: "Inter, sans-serif" }}
                   >
                     {value}
                   </div>

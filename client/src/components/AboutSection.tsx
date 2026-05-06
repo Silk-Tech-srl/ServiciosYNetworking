@@ -14,7 +14,11 @@ import {
 } from "@tabler/icons-react";
 
 const stats = [
-  { icon: IconBuildingSkyscraper, value: "500+", label: "Proyectos completados" },
+  {
+    icon: IconBuildingSkyscraper,
+    value: "500+",
+    label: "Proyectos completados",
+  },
   { icon: IconUsers, value: "120+", label: "Clientes activos" },
   { icon: IconClock, value: "15+", label: "Años de experiencia" },
   { icon: IconAward, value: "12", label: "Certificaciones" },
@@ -24,17 +28,20 @@ const values = [
   {
     icon: IconShieldCheck,
     title: "Confiabilidad",
-    description: "Infraestructuras diseñadas para el 99.9% de uptime con redundancia y failover automático.",
+    description:
+      "Infraestructuras diseñadas para el 99.9% de uptime con redundancia y failover automático.",
   },
   {
     icon: IconBulb,
     title: "Innovación",
-    description: "Adoptamos las últimas tecnologías SD-WAN, Wi-Fi 6E y Zero Trust para mantener tu red al día.",
+    description:
+      "Adoptamos las últimas tecnologías SD-WAN, Wi-Fi 6E y Zero Trust para mantener tu red al día.",
   },
   {
     icon: IconUsersGroup,
     title: "Compromiso",
-    description: "Soporte post-venta real con SLAs garantizados y equipo técnico disponible 24/7.",
+    description:
+      "Soporte post-venta real con SLAs garantizados y equipo técnico disponible 24/7.",
   },
 ];
 
@@ -63,11 +70,11 @@ export default function AboutSection() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6"
-              style={{ fontFamily: "Syne, sans-serif" }}
+              style={{ fontFamily: "Inter, sans-serif" }}
             >
               Expertos en{" "}
-              <span className="gradient-brand-text">infraestructura</span>{" "}
-              de red
+              <span className="gradient-brand-text">infraestructura</span> de
+              red
             </motion.h2>
 
             <motion.p
@@ -101,7 +108,7 @@ export default function AboutSection() {
                     <div>
                       <h4
                         className="font-bold text-slate-800 mb-1"
-                        style={{ fontFamily: "Syne, sans-serif" }}
+                        style={{ fontFamily: "Inter, sans-serif" }}
                       >
                         {val.title}
                       </h4>
@@ -136,7 +143,7 @@ export default function AboutSection() {
                   </div>
                   <div
                     className="text-4xl font-extrabold gradient-brand-text mb-1"
-                    style={{ fontFamily: "Syne, sans-serif" }}
+                    style={{ fontFamily: "Inter, sans-serif" }}
                   >
                     {stat.value}
                   </div>

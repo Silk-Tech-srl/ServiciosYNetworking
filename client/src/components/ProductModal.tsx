@@ -23,12 +23,28 @@ interface ProductModalProps {
 }
 
 const stockConfig = {
-  "En stock": { icon: IconCircleCheck, color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-200" },
-  "Bajo stock": { icon: IconAlertTriangle, color: "text-amber-600", bg: "bg-amber-50 border-amber-200" },
-  "Sin stock": { icon: IconCircleX, color: "text-red-500", bg: "bg-red-50 border-red-200" },
+  "En stock": {
+    icon: IconCircleCheck,
+    color: "text-emerald-600",
+    bg: "bg-emerald-50 border-emerald-200",
+  },
+  "Bajo stock": {
+    icon: IconAlertTriangle,
+    color: "text-amber-600",
+    bg: "bg-amber-50 border-amber-200",
+  },
+  "Sin stock": {
+    icon: IconCircleX,
+    color: "text-red-500",
+    bg: "bg-red-50 border-red-200",
+  },
 };
 
-export default function ProductModal({ product, onClose, onConsult }: ProductModalProps) {
+export default function ProductModal({
+  product,
+  onClose,
+  onConsult,
+}: ProductModalProps) {
   if (!product) return null;
   const stock = stockConfig[product.stock];
   const StockIcon = stock.icon;
@@ -53,7 +69,7 @@ export default function ProductModal({ product, onClose, onConsult }: ProductMod
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            onClick={(e) => e.stopPropagation()}
+            onClick={e => e.stopPropagation()}
           >
             <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Header */}
@@ -105,7 +121,7 @@ export default function ProductModal({ product, onClose, onConsult }: ProductMod
                     <div>
                       <h2
                         className="text-2xl font-extrabold text-slate-900 leading-tight"
-                        style={{ fontFamily: "Syne, sans-serif" }}
+                        style={{ fontFamily: "Inter, sans-serif" }}
                       >
                         {product.name}
                       </h2>
@@ -126,9 +142,10 @@ export default function ProductModal({ product, onClose, onConsult }: ProductMod
                     <div className="flex items-baseline gap-2">
                       <span
                         className="text-3xl font-extrabold gradient-brand-text"
-                        style={{ fontFamily: "Syne, sans-serif" }}
+                        style={{ fontFamily: "Inter, sans-serif" }}
                       >
-                        {product.currency} {product.price.toLocaleString("es-AR")}
+                        {product.currency}{" "}
+                        {product.price.toLocaleString("es-AR")}
                       </span>
                       <span className="text-xs text-slate-400">+ IVA</span>
                     </div>
@@ -157,13 +174,13 @@ export default function ProductModal({ product, onClose, onConsult }: ProductMod
                 <div className="mt-6">
                   <h3
                     className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-3 flex items-center gap-2"
-                    style={{ fontFamily: "Syne, sans-serif" }}
+                    style={{ fontFamily: "Inter, sans-serif" }}
                   >
                     <IconPackage size={15} className="text-blue-600" />
                     Especificaciones Técnicas
                   </h3>
                   <div className="grid grid-cols-2 gap-2">
-                    {product.specs.map((spec) => (
+                    {product.specs.map(spec => (
                       <div
                         key={spec.label}
                         className="flex flex-col gap-0.5 bg-slate-50 rounded-lg px-3 py-2.5 border border-slate-100"
@@ -185,7 +202,8 @@ export default function ProductModal({ product, onClose, onConsult }: ProductMod
                 {/* Tag */}
                 <div className="mt-4 flex items-center gap-2 text-xs text-slate-400">
                   <IconTag size={13} />
-                  Precios en USD. Consultar por financiación y disponibilidad de stock.
+                  Precios en USD. Consultar por financiación y disponibilidad de
+                  stock.
                 </div>
               </div>
             </div>
