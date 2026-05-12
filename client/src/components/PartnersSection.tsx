@@ -42,7 +42,7 @@ export default function PartnersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.05 }}
-                className="flex items-center gap-2 text-slate-300 hover:text-slate-500 transition-colors group"
+                className="flex items-center gap-2 text-slate-400 hover:text-slate-600 transition-colors group"
               >
                 <Icon
                   size={20}

@@ -52,10 +52,10 @@ function ProductCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
-      transition={{ duration: 0.4 }}
-      whileHover={{ y: -4 }}
+      transition={{ duration: 0.1 }}
+      whileHover={{ y: -5 }}
       onClick={onClick}
-      className="group bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer"
+      className="group bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 overflow-hidden cursor-pointer"
     >
       {/* Image */}
       <div className="relative bg-slate-50 p-4 aspect-[4/3] overflow-hidden">
@@ -309,7 +309,7 @@ export default function StoreSection() {
             ].map(brand => (
               <span
                 key={brand}
-                className="text-lg font-extrabold text-slate-200 hover:text-slate-400 transition-colors"
+                className="text-lg font-extrabold text-slate-400 hover:text-slate-600 transition-colors"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
                 {brand}
